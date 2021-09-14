@@ -1139,7 +1139,7 @@ async function main() {
     const dockerContainerRegistryUser = core.getInput('docker-container-registry-user', { required: true })
     const dockerImageName = core.getInput('docker-image-name', { required: false }) // Default snaplet_database from action.yml
 
-    const restoreCmd = spawnSync('snaplet', ['restore', '--no-backup', '--new'], {
+    const restoreCmd = spawnSync('snaplet', ['restore', '--no-backup'], {
         encoding: 'utf-8'
     })
     core.info('Info: snaplet restore output ' + restoreCmd.stdout + '\n' + restoreCmd.stderr)
